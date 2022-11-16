@@ -13,13 +13,13 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class DeliveryCardTest {
 
-    String generateDate(int days){
+    String generateDate(int days) {
         return LocalDate.now().plusDays(days).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
     }
 
     @BeforeEach
     void setUp() {
-        open ("http://localhost:9999");
+        open("http://localhost:9999");
     }
 
     @AfterEach
@@ -152,8 +152,6 @@ public class DeliveryCardTest {
         $("[data-test-id='phone'].input_invalid .input__sub").shouldHave(exactText("Поле обязательно для заполнения"), Duration.ofSeconds(8)).shouldBe(exist);
 
     }
-
-
 
 
 }
